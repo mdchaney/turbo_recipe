@@ -1,0 +1,12 @@
+<main class="container">
+  <p style="color: green"><%= notice %></p>
+  <h1>Recipes</h1>
+  <%= turbo_frame_tag :recipes, class: 'row g-2 my-3' do %>
+    <% @recipes.each do |recipe| %>
+      <%= render recipe %>
+    <% end %>
+    <%= turbo_frame_tag :new_recipe, class: 'col-sm-6 col-md-4 col-lg-3' do %>
+      <%= render 'form', recipe: Recipe.new %>
+    <% end -%>
+  <% end -%>
+</main>

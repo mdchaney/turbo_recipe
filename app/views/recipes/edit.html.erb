@@ -1,0 +1,10 @@
+<h1>Editing recipe</h1>
+
+<%= turbo_frame_tag @recipe do -%>
+   <%= render "form", recipe: @recipe %>
+   <br>
+
+   <div>
+     <%= link_to "Cancel", @recipe %>
+   </div>
+<% end -%>
